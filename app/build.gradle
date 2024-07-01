@@ -48,6 +48,12 @@ ext.versions =[
         tagcloudviewVersion     : '1.0.2',
         flowlayoutVersion       : '1.1.2',
         recyclerviewVersion     : '1.1.0',
+
+
+        // dagger
+        hiltCoreVersion         : '2.31-alpha',
+        hiltVersion             : '1.0.0-alpha02',
+
 ]
 
 
@@ -74,5 +80,13 @@ dependencies {
     testImplementation "com.squareup.okhttp3:mockwebserver:$versions.okhttpVersion"
 
 
+    // dagger
+    implementation "com.google.dagger:hilt-android:$versions.hiltCoreVersion"
+    implementation "androidx.hilt:hilt-common:$versions.hiltVersion"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$versions.hiltVersion"
+    kapt "com.google.dagger:hilt-compiler:$versions.hiltCoreVersion"
+    kapt "androidx.hilt:hilt-compiler:$versions.hiltVersion"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$versions.hiltCoreVersion"
+    kaptAndroidTest "com.google.dagger:hilt-compiler:$versions.hiltCoreVersion"
 
 }
