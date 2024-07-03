@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     namespace 'com.bendix.novel'
@@ -81,12 +83,7 @@ dependencies {
 
 
     // dagger
-    implementation "com.google.dagger:hilt-android:$versions.hiltCoreVersion"
-    implementation "androidx.hilt:hilt-common:$versions.hiltVersion"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$versions.hiltVersion"
-    kapt "com.google.dagger:hilt-compiler:$versions.hiltCoreVersion"
-    kapt "androidx.hilt:hilt-compiler:$versions.hiltVersion"
-    androidTestImplementation "com.google.dagger:hilt-android-testing:$versions.hiltCoreVersion"
-    kaptAndroidTest "com.google.dagger:hilt-compiler:$versions.hiltCoreVersion"
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
 
 }
